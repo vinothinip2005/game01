@@ -1,0 +1,93 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb);
+    background-size: 800% 800%;
+    animation: bgMove 15s ease infinite;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+}
+
+h2 {
+    color: #153ef6;
+}
+
+input, button {
+    padding: 12px;
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect on input */
+input:hover {
+    box-shadow: 0 0 10px #ff77aa;
+}
+
+/* Button with hover color animation */
+button {
+    background: linear-gradient(90deg, #ff6f61, #ff3b2e);
+    color: rgb(26, 226, 79);
+    cursor: pointer;
+    background-size: 200% 200%;
+    transition: transform 0.2s ease, background-position 0.5s ease;
+}
+
+button:hover {
+    transform: scale(1.15);
+    background-position: right center;
+}
+
+/* Message styles */
+#msg {
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 20px;
+    animation: colorPulse 3s infinite alternate;
+}
+
+/* Win animation */
+.correct {
+    animation: winGlow 1s infinite alternate;
+}
+
+/* Wrong guess animation */
+.wrong {
+    animation: shake 0.5s, loseColor 2s infinite alternate;
+}
+
+/* Keyframes */
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes winGlow {
+    from { color: #00ff99; text-shadow: 0 0 10px #00ff99; }
+    to { color: #00ffaa; text-shadow: 0 0 20px #00ffaa; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+@keyframes loseColor {
+    from { color: #ff2e63; }
+    to { color: #ff5c93; }
+}
+
+@keyframes colorPulse {
+    from { color: #ffffff; }
+    to { color: #ffd6e0; }
+}
+
